@@ -6,54 +6,54 @@ import java.util.Scanner;
 public class ConsoleView {
     private Scanner sc = new Scanner(System.in);
 
-    //전화번호를 입력받는 화면
+    //電話番号を入力する画面
     public String getPhoneNumber() {
-        System.out.print("전화번호를 입력하세요 :");
+        System.out.print("電話番号を入力してください :");
         return sc.nextLine();
     }
 
     //신규고객정보 입력 화면
     public Customer getCustomerInfo() {
-        System.out.println("신규 고객 정보를 입력하세요.");
-        System.out.print("전화변호 :");
+        System.out.println("新しい顧客情報を入力してください。");
+        System.out.print("電話番号 :");
         String phoneNumber = sc.nextLine();
-        System.out.print("소유주 이름 :");
+        System.out.print("所有者名 :");
         String ownerName = sc.nextLine();
-        System.out.print("동뮬 이름 :");
+        System.out.print("動物名 :");
         String petName = sc.nextLine();
-        System.out.print("주소 :");
+        System.out.print("住所 :");
         String address = sc.nextLine();
-        System.out.print("종류 :");
+        System.out.print("種類 :");
         String species = sc.nextLine();
-        System.out.print("출생년도(yyyy) :");
+        System.out.print("誕生年(yyyy) :");
         int birthYear = sc.nextInt();
         sc.nextLine();
         return new Customer(phoneNumber, ownerName, petName, address, species, birthYear);
     }
 
-    //진료 기록을 입력 받는 화면
+    //診療記録を入力する画面
     public MedicalRecord getMedicalRecordInfo() {
-        System.out.print("진료일을 입력하세요 :");
+        System.out.print("診療日を入力してください :");
         String date = sc.nextLine();
 
-        System.out.print("진료내용을 입력하세요 :");
+        System.out.print("診療内容を入力してください :");
         String content = sc.nextLine();
 
         return new MedicalRecord(null, date, content);
     }
 
-    // 진료 기록 조회하여 출력
+    // 診療記録照会による出力
     public void printMedicalRecordInfo(Customer customer) {
         List<MedicalRecord> records = customer.getMedicalRecords();
-        System.out.println("[" + customer.getPetName() + "]의 진료기록");
+        System.out.println("[" + customer.getPetName() + "]の診療記録");
         for (MedicalRecord record : records) {
-            System.out.println("- 진료일: " + record.getDate());
-            System.out.println("  진료내용: " + record.getContent());
-            System.out.println("  소유주 이름: " + customer.getOwnerName());
-            System.out.println("  동물이름: " + customer.getPetName());
-            System.out.println("  주소: " + customer.getAddress());
-            System.out.println("  종류: " + customer.getSpecies());
-            System.out.println("  출생년도: " + customer.getBirthYear());
+            System.out.println("- 診療日: " + record.getDate());
+            System.out.println("  診療内容: " + record.getContent());
+            System.out.println("  所有者名: " + customer.getOwnerName());
+            System.out.println("  動物名: " + customer.getPetName());
+            System.out.println("  住所: " + customer.getAddress());
+            System.out.println("  種類: " + customer.getSpecies());
+            System.out.println("  誕生年: " + customer.getBirthYear());
         }
     }
 

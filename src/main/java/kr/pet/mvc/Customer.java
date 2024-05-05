@@ -10,7 +10,7 @@ public class Customer {
     private String address;
     private String species;
     private int birthYear;
-    private List<MedicalRecord> medicalRecords; //진료 기록을 저장하는 리스트
+    private List<MedicalRecord> medicalRecords; //医療記録を保存するリスト
 
     public Customer() {
     }
@@ -22,7 +22,7 @@ public class Customer {
         this.address = address;
         this.species = species;
         this.birthYear = birthYear;
-        this.medicalRecords = new ArrayList<>(); //빈 리스트로 초기화
+        this.medicalRecords = new ArrayList<>(); //空のリストで初期化
     }
 
     public String getPhoneNumber() {

@@ -6,12 +6,12 @@ import java.util.List;
 public class MedicalRecordController {
     private List<MedicalRecord> records = new ArrayList<>();
 
-    //진료 기록을 등록하는 메서드
+    //診療記録を登録するメソッド
     public void addMedicalRecord(MedicalRecord record){
         records.add(record);
     }
 
-    //진료기록을 삭제하는 메서드
+    //診療記録を削除するメソッド
     public void removeMedicalRecord(String phoneNumber){
         for(int i = 0; i< records.size(); i++){
             if(records.get(i).getPhoneNumber().equals(phoneNumber)){
@@ -21,7 +21,7 @@ public class MedicalRecordController {
         }
     }
 
-    //전화번호에 해당하는 모든 진료기록을 검색하여 새로운 List<MedicalRecord>를 만들어주는 메서드
+    //電話番号に対応するすべての診療記録を検索して新しいList<MedicalRecord>を作成するメソッド
     public List<MedicalRecord> findMedicalRecords(String phoneNumber){
         List<MedicalRecord> result = new ArrayList<>();
         for(MedicalRecord record : records){
